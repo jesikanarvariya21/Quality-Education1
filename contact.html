@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact & Feedback — EduBridge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="demo-banner">✉️ Demo Mode — Form submissions are validated but not sent to a server. This is a demonstration of form functionality.</div>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar-brand"><div class="brand-icon">E</div>Edu<span>Bridge</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="learning.html">Learn</a></li><li><a href="resources.html">Resources</a></li>
+      <li><a href="career.html">Career</a></li><li><a href="progress.html">Progress</a></li>
+      <li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta"><a href="dashboard.html" class="btn btn-primary btn-sm">Dashboard</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="mobile-nav" id="mobileNav">
+  <button id="mobileNavClose" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;">✕</button>
+  <a href="index.html">🏠 Home</a><a href="dashboard.html">📊 Dashboard</a><a href="learning.html">📖 Learn</a>
+  <a href="resources.html">📚 Resources</a><a href="career.html">🎯 Career</a><a href="progress.html">🏆 Progress</a>
+  <a href="about.html">ℹ️ About</a><a href="contact.html">✉️ Contact</a>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1>✉️ Contact & Feedback</h1>
+    <p>We'd love to hear from you. Share feedback, report issues, or suggest improvements.</p>
+  </div>
+</div>
+
+<div class="container section-sm">
+  <div style="display:grid;grid-template-columns:1fr 1.6fr;gap:2rem;align-items:start">
+
+    <!-- Contact Info -->
+    <div>
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 style="margin-bottom:1.25rem">Get In Touch</h3>
+          <div style="display:flex;flex-direction:column;gap:1.25rem">
+            <div style="display:flex;gap:.75rem;align-items:flex-start">
+              <div style="width:40px;height:40px;background:rgba(13,148,136,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">📧</div>
+              <div><div style="font-weight:600;color:var(--navy)">Email</div><div class="small text-muted">contact@edubridge.edu (demo)</div></div>
+            </div>
+            <div style="display:flex;gap:.75rem;align-items:flex-start">
+              <div style="width:40px;height:40px;background:rgba(15,38,87,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">🌐</div>
+              <div><div style="font-weight:600;color:var(--navy)">Website</div><div class="small text-muted">www.edubridge.edu (demo)</div></div>
+            </div>
+            <div style="display:flex;gap:.75rem;align-items:flex-start">
+              <div style="width:40px;height:40px;background:rgba(217,119,6,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">🕐</div>
+              <div><div style="font-weight:600;color:var(--navy)">Response Time</div><div class="small text-muted">Usually within 48 hours (demo)</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h4 style="margin-bottom:.75rem">FAQs</h4>
+          <div style="display:flex;flex-direction:column;gap:.75rem">
+            <details style="border:1px solid var(--gray-100);border-radius:8px;padding:.75rem;cursor:pointer">
+              <summary style="font-weight:600;color:var(--navy);font-size:.9rem">Is EduBridge completely free?</summary>
+              <p style="margin-top:.5rem;font-size:.88rem">Yes! EduBridge is a student project aimed at providing free education to all. All resources, lessons, and career guidance are free.</p>
+            </details>
+            <details style="border:1px solid var(--gray-100);border-radius:8px;padding:.75rem;cursor:pointer">
+              <summary style="font-weight:600;color:var(--navy);font-size:.9rem">Is my data safe?</summary>
+              <p style="margin-top:.5rem;font-size:.88rem">All progress data is stored only in your browser's local storage. No data is sent to any server in this demo.</p>
+            </details>
+            <details style="border:1px solid var(--gray-100);border-radius:8px;padding:.75rem;cursor:pointer">
+              <summary style="font-weight:600;color:var(--navy);font-size:.9rem">Can I use it offline?</summary>
+              <p style="margin-top:.5rem;font-size:.88mm">Offline access is planned for a future version. The current demo requires an internet connection for fonts.</p>
+            </details>
+            <details style="border:1px solid var(--gray-100);border-radius:8px;padding:.75rem;cursor:pointer">
+              <summary style="font-weight:600;color:var(--navy);font-size:.9rem">Is this an IBM project?</summary>
+              <p style="margin-top:.5rem;font-size:.88rem">EduBridge is a student initiative inspired by UN SDG 4, created as part of an IBM-associated academic presentation.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feedback Form -->
+    <div class="card">
+      <div class="card-header">
+        <h3 style="font-size:1rem;margin:0">📝 Send Feedback</h3>
+      </div>
+      <div class="card-body">
+        <div class="alert alert-warning mb-3" style="font-size:.85rem">
+          ⚠️ <strong>Demo Notice:</strong> This form validates your input but does not send data to any server. In a production version, submissions would be securely stored.
+        </div>
+        <div id="successMessage" class="alert alert-success hidden">
+          ✅ <strong>Thank you for your feedback!</strong> (Demo) — In a real deployment, your message would be sent. Your input has been noted locally.
+        </div>
+        <form id="feedbackForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="feedbackName">Full Name <span style="color:var(--danger)">*</span></label>
+            <input type="text" class="form-control" id="feedbackName" placeholder="Your full name" autocomplete="name">
+            <div class="form-error" id="errName"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="feedbackEmail">Email Address <span style="color:var(--danger)">*</span></label>
+            <input type="email" class="form-control" id="feedbackEmail" placeholder="you@example.com" autocomplete="email">
+            <div class="form-error" id="errEmail"></div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="feedbackType">Feedback Type</label>
+            <select class="form-control" id="feedbackType">
+              <option value="">— Select a category —</option>
+              <option value="suggestion">💡 Feature Suggestion</option>
+              <option value="bug">🐛 Bug Report</option>
+              <option value="content">📚 Content Feedback</option>
+              <option value="general">💬 General Feedback</option>
+              <option value="partnership">🤝 Partnership / Collaboration</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="feedbackMessage">Message <span style="color:var(--danger)">*</span></label>
+            <textarea class="form-control" id="feedbackMessage" placeholder="Share your thoughts, suggestions, or concerns..." rows="5"></textarea>
+            <div class="form-error" id="errMessage"></div>
+            <div class="form-hint"><span id="charCount">0</span>/500 characters</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Rating (optional)</label>
+            <div id="ratingContainer" style="display:flex;gap:.5rem;font-size:1.75rem;cursor:pointer">
+              <span data-rating="1" onclick="setRating(1)">⭐</span>
+              <span data-rating="2" onclick="setRating(2)">⭐</span>
+              <span data-rating="3" onclick="setRating(3)">⭐</span>
+              <span data-rating="4" onclick="setRating(4)">⭐</span>
+              <span data-rating="5" onclick="setRating(5)">⭐</span>
+            </div>
+            <input type="hidden" id="feedbackRating" value="">
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitBtn">
+            📤 Submit Feedback (Demo)
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="justify-content:center">
+      <span>© 2024 EduBridge · <a href="index.html" style="color:var(--teal-light)">Home</a> · <a href="about.html" style="color:var(--teal-light)">About</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>

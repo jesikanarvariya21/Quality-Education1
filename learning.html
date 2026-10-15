@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personalized Learning — EduBridge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="demo-banner">📖 Personalized Learning — Topic explanations, quizzes, and smart recommendations. Progress saved locally.</div>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar-brand"><div class="brand-icon">E</div>Edu<span>Bridge</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="learning.html">Learn</a></li><li><a href="resources.html">Resources</a></li>
+      <li><a href="career.html">Career</a></li><li><a href="progress.html">Progress</a></li>
+      <li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta"><a href="dashboard.html" class="btn btn-primary btn-sm">Dashboard</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="mobile-nav" id="mobileNav">
+  <button id="mobileNavClose" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;">✕</button>
+  <a href="index.html">🏠 Home</a><a href="dashboard.html">📊 Dashboard</a><a href="learning.html">📖 Learn</a>
+  <a href="resources.html">📚 Resources</a><a href="career.html">🎯 Career</a><a href="progress.html">🏆 Progress</a>
+  <a href="about.html">ℹ️ About</a><a href="contact.html">✉️ Contact</a>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1>📖 Personalized Learning</h1>
+    <p>Choose a subject and topic, study the lesson, then test yourself with a quiz.</p>
+  </div>
+</div>
+
+<div class="container section-sm">
+  <div style="display:grid;grid-template-columns:300px 1fr;gap:1.75rem;align-items:start">
+
+    <!-- Subject Selector -->
+    <div class="card">
+      <div class="card-header"><h3 style="font-size:1rem;margin:0">📂 Choose Subject</h3></div>
+      <div class="card-body" style="padding:1rem">
+        <div id="subjectList" style="display:flex;flex-direction:column;gap:.4rem"></div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div>
+      <!-- Topic List -->
+      <div id="topicSection">
+        <div class="card mb-3">
+          <div class="card-header flex-between">
+            <h3 id="topicHeading" style="font-size:1rem;margin:0">Select a subject to see topics</h3>
+            <span id="topicProgress" class="tag tag-teal" style="display:none"></span>
+          </div>
+          <div class="card-body" id="topicList" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem"></div>
+        </div>
+      </div>
+
+      <!-- Lesson Content -->
+      <div id="lessonSection" class="hidden">
+        <div class="card mb-3">
+          <div class="card-header flex-between">
+            <div>
+              <button onclick="backToTopics()" class="btn btn-secondary btn-sm" style="margin-bottom:.5rem">← Back</button>
+              <h3 id="lessonTitle" style="font-size:1.1rem;margin:0"></h3>
+            </div>
+            <span id="lessonTag" class="tag"></span>
+          </div>
+          <div class="card-body" id="lessonContent"></div>
+          <div class="card-footer">
+            <button id="startQuizBtn" class="btn btn-primary" onclick="startQuiz()">✏️ Take Quiz →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quiz Section -->
+      <div id="quizSection" class="hidden">
+        <div class="card">
+          <div class="card-header flex-between">
+            <div>
+              <button onclick="backToLesson()" class="btn btn-secondary btn-sm" style="margin-bottom:.5rem">← Back to Lesson</button>
+              <h3 id="quizTitle" style="font-size:1.1rem;margin:0"></h3>
+            </div>
+            <span id="quizCounter" class="tag tag-navy"></span>
+          </div>
+          <div class="card-body">
+            <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill" style="width:0%"></div></div>
+            <div id="quizContainer" class="quiz-container"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Study Plan Generator -->
+  <div class="card mt-4" id="studyPlanSection">
+    <div class="card-header flex-between">
+      <h3 style="font-size:1rem;margin:0">📅 Generate a Study Plan</h3>
+      <span class="tag tag-teal">Predefined Rules</span>
+    </div>
+    <div class="card-body">
+      <p class="small text-muted mb-3">This study plan generator uses predefined rules — not AI — to create a schedule based on your goal and availability.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:1rem;align-items:end">
+        <div class="form-group" style="margin:0">
+          <label class="form-label">Goal Subject</label>
+          <select class="form-control" id="planSubject">
+            <option value="math">Mathematics</option>
+            <option value="python">Python Programming</option>
+            <option value="science">Basic Science</option>
+            <option value="english">English</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin:0">
+          <label class="form-label">Hours per Day</label>
+          <select class="form-control" id="planHours">
+            <option value="1">1 hour</option>
+            <option value="2" selected>2 hours</option>
+            <option value="3">3 hours</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin:0">
+          <label class="form-label">Duration</label>
+          <select class="form-control" id="planWeeks">
+            <option value="1">1 week</option>
+            <option value="2" selected>2 weeks</option>
+            <option value="4">4 weeks</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" onclick="generateStudyPlan()">Generate</button>
+      </div>
+      <div id="planOutput" class="hidden mt-3"></div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="justify-content:center">
+      <span>© 2024 EduBridge · <a href="index.html" style="color:var(--teal-light)">Home</a> · <a href="dashboard.html" style="color:var(--teal-light)">Dashboard</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/learning.js"></script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduBridge — Quality Education for Everyone</title>
+  <meta name="description" content="EduBridge makes quality education accessible, affordable, personalized, and career-oriented for every student.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Demo Banner -->
+<div class="demo-banner">
+  🎓 Demo Mode — All data is illustrative. EduBridge is a student project aligned with UN SDG 4 (Quality Education).
+</div>
+
+<!-- Navbar -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a href="index.html" class="navbar-brand">
+      <div class="brand-icon" aria-hidden="true">E</div>
+      Edu<span>Bridge</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="learning.html">Learn</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="career.html">Career</a></li>
+      <li><a href="progress.html">Progress</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="dashboard.html" class="btn btn-primary btn-sm">Go to Dashboard</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+  <button id="mobileNavClose" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;" aria-label="Close menu">✕</button>
+  <a href="index.html">🏠 Home</a>
+  <a href="dashboard.html">📊 Dashboard</a>
+  <a href="learning.html">📖 Learn</a>
+  <a href="resources.html">📚 Resources</a>
+  <a href="career.html">🎯 Career</a>
+  <a href="progress.html">🏆 Progress</a>
+  <a href="about.html">ℹ️ About</a>
+  <a href="contact.html">✉️ Contact</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero" aria-label="Welcome banner">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">🌍 Aligned with UN SDG 4 — Quality Education</div>
+        <h1>Quality Education.<br><em>Equal Opportunities.</em><br>Brighter Futures.</h1>
+        <p class="hero-sub">EduBridge delivers personalized learning, free resources, and career guidance to every student — regardless of location or income.</p>
+        <div class="hero-actions">
+          <a href="learning.html" class="btn btn-primary btn-lg">🚀 Start Learning</a>
+          <a href="resources.html" class="btn btn-white btn-lg">📚 Explore Courses</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>50K+</strong><span>Students Reached*</span></div>
+          <div class="hero-stat"><strong>200+</strong><span>Free Courses*</span></div>
+          <div class="hero-stat"><strong>15+</strong><span>Career Paths*</span></div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-card-stack">
+          <div class="hero-float-card">
+            <div class="hfc-label">📐 Current Lesson</div>
+            <div class="hfc-title">Algebra Fundamentals</div>
+            <div class="hfc-progress-bar"><div class="hfc-progress-fill" style="width:65%"></div></div>
+          </div>
+          <div class="hero-float-card">
+            <div class="hfc-label">🐍 Python Programming</div>
+            <div class="hfc-title">Functions & Loops</div>
+            <div class="hfc-progress-bar"><div class="hfc-progress-fill" style="width:42%"></div></div>
+          </div>
+          <div class="hero-float-card">
+            <div class="hfc-label">🏆 Achievement Unlocked</div>
+            <div class="hfc-title">7-Day Learning Streak! 🔥</div>
+            <div style="font-size:.8rem;opacity:.7;margin-top:.25rem">Keep up the great work!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<div class="stats-bar" aria-label="Platform statistics">
+  <div class="container">
+    <div class="grid-4">
+      <div class="stat-item">
+        <strong data-count="50000">0</strong>
+        <span>Students Reached</span>
+        <span class="stat-note">*Illustrative figure</span>
+      </div>
+      <div class="stat-item">
+        <strong data-count="200">0</strong>
+        <span>Free Courses</span>
+        <span class="stat-note">*Illustrative figure</span>
+      </div>
+      <div class="stat-item">
+        <strong data-count="95">0</strong>
+        <span>% Satisfaction Rate</span>
+        <span class="stat-note">*Illustrative figure</span>
+      </div>
+      <div class="stat-item">
+        <strong data-count="15">0</strong>
+        <span>Career Paths Covered</span>
+        <span class="stat-note">*Illustrative figure</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Problem Statement -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="badge-label">The Problem</span>
+      <h2>Why Quality Education Still Isn't Accessible</h2>
+      <p>Millions of students face barriers that prevent them from reaching their full potential.</p>
+    </div>
+    <div class="grid-3">
+      <div class="feature-card reveal" style="border-top:4px solid #dc2626">
+        <div class="feature-icon" style="background:rgba(220,38,38,.1)">🎯</div>
+        <h3>One-Size-Fits-All Learning</h3>
+        <p>Traditional education doesn't adapt to different learning speeds, leaving many students behind or bored.</p>
+      </div>
+      <div class="feature-card reveal" style="border-top:4px solid #d97706">
+        <div class="feature-icon amber">🌐</div>
+        <h3>Geographic Inequality</h3>
+        <p>Rural and low-income students lack access to quality teachers, materials, and educational technology.</p>
+      </div>
+      <div class="feature-card reveal" style="border-top:4px solid #7c3aed">
+        <div class="feature-icon purple">💼</div>
+        <h3>No Career Guidance</h3>
+        <p>Students graduate without knowing what careers exist, what skills are needed, or how to prepare for them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section" style="background:var(--gray-50)">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="badge-label">Our Solution</span>
+      <h2>How EduBridge Makes a Difference</h2>
+      <p>A holistic platform tackling educational inequality from every angle.</p>
+    </div>
+    <div class="grid-3">
+      <div class="feature-card reveal">
+        <div class="feature-icon teal">🧠</div>
+        <h3>Personalized Learning Paths</h3>
+        <p>Adaptive quizzes and topic recommendations that adjust to your pace. Learn at your speed, not the class average.</p>
+        <a href="learning.html" class="btn btn-outline-teal btn-sm mt-3">Try Now →</a>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon navy">📚</div>
+        <h3>Free Educational Resources</h3>
+        <p>Curated notes, tutorials, and practice questions organized by subject and difficulty. Works on low bandwidth too.</p>
+        <a href="resources.html" class="btn btn-outline-teal btn-sm mt-3">Browse Resources →</a>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon amber">🎯</div>
+        <h3>Career Development</h3>
+        <p>Explore career paths, complete skill checklists, and build learning roadmaps tailored to your interests.</p>
+        <a href="career.html" class="btn btn-outline-teal btn-sm mt-3">Explore Careers →</a>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon purple">🏆</div>
+        <h3>Gamified Progress Tracking</h3>
+        <p>Earn badges, maintain learning streaks, and celebrate milestones to stay motivated every day.</p>
+        <a href="progress.html" class="btn btn-outline-teal btn-sm mt-3">View Progress →</a>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon teal">🌍</div>
+        <h3>Multilingual Support</h3>
+        <p>Content available in English and Hindi, with more languages planned. Education should have no language barriers.</p>
+        <a href="resources.html" class="btn btn-outline-teal btn-sm mt-3">See Resources →</a>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon navy">📱</div>
+        <h3>Mobile-First Design</h3>
+        <p>Fully responsive interface designed for smartphones and low-bandwidth connections. Learn from anywhere.</p>
+        <a href="dashboard.html" class="btn btn-outline-teal btn-sm mt-3">Open Dashboard →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SDG 4 Section -->
+<section class="section sdg-section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center">
+      <div class="reveal">
+        <div class="sdg-badge">🌍 UN Sustainable Development Goal 4</div>
+        <h2>Quality Education for All</h2>
+        <p style="margin:1rem 0 1.5rem">SDG 4 calls on the world to ensure inclusive, equitable, quality education and promote lifelong learning opportunities for all by 2030.</p>
+        <p>EduBridge directly addresses this goal by removing barriers of cost, geography, language, and rigid learning structures — bringing quality education to every student.</p>
+        <a href="about.html" class="btn btn-white mt-4">Learn About Our Mission →</a>
+      </div>
+      <div class="sdg-goals reveal">
+        <div class="sdg-goal">
+          <div class="sdg-goal-num">4.1</div>
+          <p>Free, equitable primary & secondary education for all</p>
+        </div>
+        <div class="sdg-goal">
+          <div class="sdg-goal-num">4.4</div>
+          <p>Increase youth with relevant technical & vocational skills</p>
+        </div>
+        <div class="sdg-goal">
+          <div class="sdg-goal-num">4.5</div>
+          <p>Eliminate gender and economic disparities in education</p>
+        </div>
+        <div class="sdg-goal">
+          <div class="sdg-goal-num">4.7</div>
+          <p>Education for sustainable development and global citizenship</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials / How it Works -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="badge-label">How It Works</span>
+      <h2>Start Learning in 3 Simple Steps</h2>
+    </div>
+    <div class="grid-3">
+      <div class="text-center reveal" style="padding:1.5rem">
+        <div style="width:64px;height:64px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin:0 auto 1.25rem;color:white;font-weight:800">1</div>
+        <h3>Choose Your Path</h3>
+        <p>Select from subjects like Math, Science, Programming, or take our career interest quiz to find your direction.</p>
+      </div>
+      <div class="text-center reveal" style="padding:1.5rem">
+        <div style="width:64px;height:64px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin:0 auto 1.25rem;color:white;font-weight:800">2</div>
+        <h3>Learn & Practice</h3>
+        <p>Study bite-sized lessons, watch explanations, then test yourself with instant-feedback quizzes.</p>
+      </div>
+      <div class="text-center reveal" style="padding:1.5rem">
+        <div style="width:64px;height:64px;background:linear-gradient(135deg,var(--teal),var(--navy));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin:0 auto 1.25rem;color:white;font-weight:800">3</div>
+        <h3>Track & Grow</h3>
+        <p>Earn badges, track your streak, monitor your progress, and get recommendations for what to study next.</p>
+      </div>
+    </div>
+    <div class="text-center mt-4 reveal">
+      <a href="learning.html" class="btn btn-primary btn-lg">Begin Your Journey 🚀</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="navbar-brand" style="font-size:1.15rem">
+          <div class="brand-icon" style="width:32px;height:32px;font-size:.95rem">E</div>
+          Edu<span>Bridge</span>
+        </a>
+        <p>Quality education, accessible to every student. Bridging the gap between potential and opportunity.</p>
+        <div class="footer-sdg mt-3">🌍 Aligned with UN SDG 4</div>
+      </div>
+      <div>
+        <h4>Platform</h4>
+        <ul class="footer-links">
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="learning.html">Personalized Learning</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="career.html">Career Guidance</a></li>
+          <li><a href="progress.html">Progress & Badges</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">Our Mission</a></li>
+          <li><a href="about.html#team">The Team</a></li>
+          <li><a href="about.html#sdg">SDG 4 Alignment</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Learn</h4>
+        <ul class="footer-links">
+          <li><a href="resources.html?subject=math">Mathematics</a></li>
+          <li><a href="resources.html?subject=science">Science</a></li>
+          <li><a href="resources.html?subject=programming">Programming</a></li>
+          <li><a href="resources.html?subject=english">English</a></li>
+          <li><a href="career.html">Career Paths</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 EduBridge. A student project for IBM Presentation · UN SDG 4.</span>
+      <span>Built with ❤️ for equal education access</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

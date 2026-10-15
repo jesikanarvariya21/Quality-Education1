@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learning Resources — EduBridge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="demo-banner">📚 Resources — Free educational materials organized by subject, level, and language. Search and filter below.</div>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar-brand"><div class="brand-icon">E</div>Edu<span>Bridge</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="learning.html">Learn</a></li><li><a href="resources.html">Resources</a></li>
+      <li><a href="career.html">Career</a></li><li><a href="progress.html">Progress</a></li>
+      <li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta"><a href="dashboard.html" class="btn btn-primary btn-sm">Dashboard</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="mobile-nav" id="mobileNav">
+  <button id="mobileNavClose" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;">✕</button>
+  <a href="index.html">🏠 Home</a><a href="dashboard.html">📊 Dashboard</a><a href="learning.html">📖 Learn</a>
+  <a href="resources.html">📚 Resources</a><a href="career.html">🎯 Career</a><a href="progress.html">🏆 Progress</a>
+  <a href="about.html">ℹ️ About</a><a href="contact.html">✉️ Contact</a>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1>📚 Learning Resources</h1>
+    <p>Free educational materials organized by subject, level, and language. No subscription required.</p>
+  </div>
+</div>
+
+<div class="container section-sm">
+  <!-- Search + Language Toggle -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem">
+        <div class="search-bar" style="flex:1;min-width:250px">
+          <span>🔍</span>
+          <input type="text" id="searchInput" placeholder="Search resources by title or subject..." aria-label="Search resources">
+          <button class="btn btn-primary btn-sm" onclick="applyFilters()">Search</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:.6rem">
+          <span class="small font-semibold" style="color:var(--navy)">🌐 Language:</span>
+          <button id="langEn" class="chip active" onclick="setLanguage('en')">English</button>
+          <button id="langHi" class="chip" onclick="setLanguage('hi')">हिंदी</button>
+        </div>
+      </div>
+      <!-- Filters -->
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center">
+        <div>
+          <span class="small font-semibold" style="color:var(--navy)">Subject:</span>
+          <div class="filter-chips" id="subjectFilter" style="display:inline-flex;gap:.4rem;margin-left:.5rem">
+            <button class="chip active" data-subject="all" onclick="filterBySubject('all')">All</button>
+            <button class="chip" data-subject="math" onclick="filterBySubject('math')">📐 Maths</button>
+            <button class="chip" data-subject="science" onclick="filterBySubject('science')">🔬 Science</button>
+            <button class="chip" data-subject="programming" onclick="filterBySubject('programming')">💻 Programming</button>
+            <button class="chip" data-subject="english" onclick="filterBySubject('english')">📚 English</button>
+            <button class="chip" data-subject="social" onclick="filterBySubject('social')">🌍 Social Studies</button>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;margin-top:.75rem">
+        <div>
+          <span class="small font-semibold" style="color:var(--navy)">Level:</span>
+          <div class="filter-chips" id="levelFilter" style="display:inline-flex;gap:.4rem;margin-left:.5rem">
+            <button class="chip active" data-level="all" onclick="filterByLevel('all')">All</button>
+            <button class="chip" data-level="beginner" onclick="filterByLevel('beginner')">Beginner</button>
+            <button class="chip" data-level="intermediate" onclick="filterByLevel('intermediate')">Intermediate</button>
+            <button class="chip" data-level="advanced" onclick="filterByLevel('advanced')">Advanced</button>
+          </div>
+        </div>
+        <div>
+          <span class="small font-semibold" style="color:var(--navy)">Type:</span>
+          <div class="filter-chips" id="typeFilter" style="display:inline-flex;gap:.4rem;margin-left:.5rem">
+            <button class="chip active" data-type="all" onclick="filterByType('all')">All</button>
+            <button class="chip" data-type="notes" onclick="filterByType('notes')">📝 Notes</button>
+            <button class="chip" data-type="video" onclick="filterByType('video')">🎥 Video</button>
+            <button class="chip" data-type="practice" onclick="filterByType('practice')">✏️ Practice</button>
+            <button class="chip" data-type="tutorial" onclick="filterByType('tutorial')">🎓 Tutorial</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results Count -->
+  <div class="flex-between mb-3">
+    <h3 style="font-size:1rem;color:var(--navy)" id="resultsCount">Loading resources...</h3>
+    <div class="alert alert-info" style="padding:.4rem .8rem;font-size:.8rem;margin:0">📱 Mobile-friendly · Low bandwidth optimized</div>
+  </div>
+
+  <!-- Resources Grid -->
+  <div id="resourcesGrid" style="display:flex;flex-direction:column;gap:.75rem"></div>
+
+  <!-- No results -->
+  <div id="noResults" class="hidden text-center" style="padding:3rem">
+    <div style="font-size:3rem;margin-bottom:1rem">🔍</div>
+    <h3>No resources found</h3>
+    <p>Try different keywords or remove some filters.</p>
+    <button onclick="resetFilters()" class="btn btn-outline-teal mt-3">Clear Filters</button>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="justify-content:center">
+      <span>© 2024 EduBridge · <a href="index.html" style="color:var(--teal-light)">Home</a> · All resources are free for educational use.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/resources.js"></script>
+</body>
+</html>

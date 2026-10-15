@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Progress & Achievements — EduBridge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="demo-banner">🏆 Progress & Achievements — Your demo progress is stored in local storage. Complete lessons to earn more badges!</div>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar-brand"><div class="brand-icon">E</div>Edu<span>Bridge</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="learning.html">Learn</a></li><li><a href="resources.html">Resources</a></li>
+      <li><a href="career.html">Career</a></li><li><a href="progress.html">Progress</a></li>
+      <li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta"><a href="learning.html" class="btn btn-primary btn-sm">Keep Learning</a></div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<nav class="mobile-nav" id="mobileNav">
+  <button id="mobileNavClose" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;">✕</button>
+  <a href="index.html">🏠 Home</a><a href="dashboard.html">📊 Dashboard</a><a href="learning.html">📖 Learn</a>
+  <a href="resources.html">📚 Resources</a><a href="career.html">🎯 Career</a><a href="progress.html">🏆 Progress</a>
+  <a href="about.html">ℹ️ About</a><a href="contact.html">✉️ Contact</a>
+</nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1>🏆 Progress & Achievements</h1>
+    <p>Track your learning journey, celebrate milestones, and earn badges.</p>
+  </div>
+</div>
+
+<div class="container section-sm">
+
+  <!-- Streak + XP -->
+  <div class="grid-2 mb-4" id="topRow">
+    <div class="streak-display">
+      <div class="streak-flame">🔥</div>
+      <div class="streak-info">
+        <strong id="streakCount">7</strong>
+        <span>Day Learning Streak — Keep it going!</span>
+      </div>
+    </div>
+    <div class="card card-body flex-between">
+      <div>
+        <div style="font-size:.85rem;color:var(--gray-400);margin-bottom:.25rem">Total XP Earned</div>
+        <div style="font-size:2rem;font-weight:800;color:var(--warning)" id="xpDisplay">1,240 XP</div>
+        <div class="small text-muted">Next milestone: 2,000 XP</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:2rem">⭐</div>
+        <div class="small text-muted" id="xpLevel">Explorer</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Course Progress -->
+  <div class="card mb-4">
+    <div class="card-header"><h3 style="font-size:1rem;margin:0">📚 Course Progress</h3></div>
+    <div class="card-body" id="courseProgress" style="display:flex;flex-direction:column;gap:1.25rem"></div>
+  </div>
+
+  <!-- Quiz History -->
+  <div class="card mb-4">
+    <div class="card-header flex-between">
+      <h3 style="font-size:1rem;margin:0">✏️ Quiz History</h3>
+      <button onclick="clearQuizHistory()" class="btn btn-secondary btn-sm" style="font-size:.78rem">Clear History</button>
+    </div>
+    <div class="card-body" id="quizHistory"></div>
+  </div>
+
+  <!-- Badges -->
+  <div class="card mb-4">
+    <div class="card-header"><h3 style="font-size:1rem;margin:0">🏅 Achievements & Badges</h3></div>
+    <div class="card-body">
+      <div class="badge-grid" id="badgesContainer"></div>
+    </div>
+  </div>
+
+  <!-- Overall Stats -->
+  <div class="card">
+    <div class="card-header"><h3 style="font-size:1rem;margin:0">📊 Learning Statistics</h3></div>
+    <div class="card-body" id="statsGrid">
+      <div class="grid-4">
+        <div class="text-center" style="padding:1rem">
+          <div style="font-size:2rem;font-weight:800;color:var(--teal)" id="statTopics">0</div>
+          <div class="small text-muted">Topics Completed</div>
+        </div>
+        <div class="text-center" style="padding:1rem">
+          <div style="font-size:2rem;font-weight:800;color:var(--navy)" id="statQuizzes">0</div>
+          <div class="small text-muted">Quizzes Taken</div>
+        </div>
+        <div class="text-center" style="padding:1rem">
+          <div style="font-size:2rem;font-weight:800;color:var(--warning)" id="statAvg">–</div>
+          <div class="small text-muted">Avg Quiz Score</div>
+        </div>
+        <div class="text-center" style="padding:1rem">
+          <div style="font-size:2rem;font-weight:800;color:#7c3aed" id="statBadges">0</div>
+          <div class="small text-muted">Badges Earned</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="learning.html" class="btn btn-primary btn-lg">📖 Continue Learning</a>
+    <button onclick="resetProgress()" class="btn btn-secondary btn-lg" style="margin-left:1rem">🔄 Reset Demo Data</button>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="justify-content:center">
+      <span>© 2024 EduBridge · Progress stored locally in your browser.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/progress.js"></script>
+</body>
+</html>
